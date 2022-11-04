@@ -1,0 +1,106 @@
+import random
+Employee = {"UniqueID":[], "Name":[], "Address":[], "Phone":[], "Social Security Number":[], "Manager":[], "Job Title":[], "Skills":[]}
+def Questions():
+    i = 0
+    while True:
+        Employee["UniqueID"].append(random.random())
+        
+        Q1 = str(input("Enter name: "))
+        if (isinstance(Q1,str) == True):
+            Employee["Name"].append(Q1)
+        else:
+            print("Invalid Entry Type. Try again")
+            Q1 = str(input("Enter name: "))
+            Employee["Name"].append(Q1)
+   
+        Q2 = str(input("Enter Address: "))
+        if (isinstance(Q2,str) == True):
+            Employee["Address"].append(Q2)
+        else:
+            print("Invalid Entry Type. Try again")
+            Q2 = str(input("Enter Address: "))
+            Employee["Address"].append(Q2)
+
+        try:    
+            Q3 = int(input("Enter a Phone Number: "))
+            isinstance(Q3,int)
+        except:
+            print("Invalid Entry Type. Try again")
+            Q3 = int(input("Enter a Phone Number: "))
+            isinstance(Q3,int)
+            Employee["Phone"].append(Q3)
+            
+        try:    
+            Q4 = int(input("Enter Social Security: "))
+            isinstance(Q4,int)
+        except:
+            print("Invalid Entry Type. Try again")
+            Q4 = int(input("Enter Social Security: "))
+            isinstance(Q4,int)
+            Employee["Social Security Number"].append(Q4)
+
+        Q5 = str(input("Enter Yes or No if Manager: "))
+        if (isinstance(Q5,str) == True):
+            Employee["Manager"].append(Q5)
+        else:
+            print("Invalid Entry Type. Try again")
+            Q5 = str(input("Enter Yes or No if Manager: "))
+            Employee["Manager"].append(Q5)
+
+        Q6 = str(input("Enter Job Title: "))
+        if (isinstance(Q6,str) == True):
+            Employee["Job Title"].append(Q6)
+        else:
+            print("Invalid Entry Type. Try again")
+            Q6 = str(input("Enter Job Title: "))
+            Employee["Job Title"].append(Q6)
+
+        Q7 = str(input("Enter Skill: "))
+        if (isinstance(Q7,str) == True):
+            Employee["Skills"].append(Q7)
+        else:
+            print("Invalid Entry Type. Try again")
+            Q7 = str(input("Enter Skill: "))
+            Employee["Skills"].append(Q7)
+        print(Employee, "\n")
+        i = i + 1
+        if (i == 20):
+            break
+    return Employee
+
+    
+def Query():
+    print("Enter 1 to search by name,","\n","2 to search by skills,","\n","3 to search by manager","\n")
+    option = int(input())
+    if (option == 1):
+        n = input("Enter Name: ")
+        if (n in Employee["Name"]):
+            print("Employee in database")
+    if (option == 2):
+        s = input("Enter Skill: ")
+        if (s in Employee["Skills"]):
+            print("Employee in Database")
+    if (option == 3):
+        m = input("Enter if manager: ")
+        if (m in Employee["Manager"]):
+            print("Employee in Database")
+
+
+def Menu():
+    while True:
+        print("Enter 1 to add entries to Database","\n","Enter 2 for Query","\n","Enter 3 to exit","\n")
+        options = int(input())
+        if (options == 1):
+            Questions()
+        elif (options == 2):
+            Query()
+        elif (options == 3):
+            break
+Menu()     
+        
+            
+        
+
+
+
+            
